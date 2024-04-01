@@ -1,6 +1,7 @@
 package br.com.brunasouza.servicex.categoria.domain;
 
 import br.com.brunasouza.servicex.servico.domain.Servico;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,6 +20,7 @@ public class  Categoria {
     @Column(name = "NOME_CATEGORIA")
     private String nomeCategoria;
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Servico> servicos;
 
     public Categoria() {
