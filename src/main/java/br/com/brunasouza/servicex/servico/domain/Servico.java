@@ -1,6 +1,7 @@
 package br.com.brunasouza.servicex.servico.domain;
 
 import br.com.brunasouza.servicex.categoria.domain.Categoria;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,8 @@ public class Servico {
     @ManyToOne
     @JoinColumn(name = "idCategoria")
     private Categoria categoria;
-
+//  @JsonIgnore
+//  @ManyToMany(mappedBy = "servicos")
+//  private List<OrdemServico> ordemServicos;
 }
 
